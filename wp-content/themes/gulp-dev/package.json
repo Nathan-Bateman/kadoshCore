@@ -8,14 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mor10/humescores"
+    "url": "https://github.com/Nathan-Bateman/hume_under.git"
   },
-  "author": "Morten Rand-Hendriksen",
+  "author": "Nathan Bateman",
   "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/mor10/humescores/issues"
-  },
-  "homepage": "https://github.com/mor10/humescores#readme",
+  "homepage": "https://github.com/Nathan-Bateman/hume_under.git",
   "devDependencies": {
     "autoprefixer": "^6.5.2",
     "browser-sync": "^2.17.6",
