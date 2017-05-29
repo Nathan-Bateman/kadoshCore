@@ -1,0 +1,546 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"he",
+				"height"
+			],
+			[
+				"remo",
+				"remove"
+			],
+			[
+				"r",
+				"remove"
+			],
+			[
+				"fon",
+				"font-style"
+			],
+			[
+				"new",
+				"newStartDate"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"auto",
+				"autofocus"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"back",
+				"background-image"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"add",
+				"addError"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"form-",
+				"form-group"
+			],
+			[
+				"list-style",
+				"list-style-type"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"spac",
+				"space-around"
+			],
+			[
+				"count",
+				"countMarkup"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"rb",
+				"rgba()"
+			],
+			[
+				"quer",
+				"querySelectorAll"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"check",
+				"checkName"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"sig",
+				"signOut"
+			],
+			[
+				"on",
+				"onclick"
+			],
+			[
+				"btn",
+				"btn-secondary"
+			],
+			[
+				"checkEven",
+				"checkEventName"
+			],
+			[
+				"too",
+				"tooltip"
+			],
+			[
+				"email",
+				"emailField"
+			],
+			[
+				"ne",
+				"needNumber"
+			],
+			[
+				"need",
+				"needUpper"
+			],
+			[
+				"lo",
+				"lowercase"
+			],
+			[
+				"tool",
+				"tooltip"
+			],
+			[
+				"needs",
+				"needsValue"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"name",
+				"nameField"
+			],
+			[
+				"aut",
+				"autocomplete"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 367.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/coh/js/news.js",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/foundation/index.html",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/foundation/gulpfile.js",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/foundation/scss/small.scss",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/foundation/scss/_variables.scss",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/foundation/js/main.js",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/foundation/js/final.min.js",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/portfolio/gulpfile.js",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/portfolio/js/main.js",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/portfolio/big.html",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/portfolio/js/slider.js",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/nathanPortfolio/gulpfile.js",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/nathanPortfolio/index.html",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/coh/js/main.js",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/coh/gulpfile.js",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/kevin-simon/js/scrolling-nav.js",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/kevin-simon/css/scrolling-nav.css",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/kevin-simon/index.php",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/carol_boggess/wp-content/themes/virtue_premium/templates/home/flex-slider-fullwidth.php",
+		"/Users/nathantoddbatemanjr/Desktop/custom-script.js",
+		"/Applications/MAMP/tmp/mysql/my.cnf",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/js/main.js",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/kevin-simon/index.html",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/scss/small.scss",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/index.html",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/coh/index.php",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/coh/css/main.css",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/coh/css/final.css",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/coh/js/final.min.js",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/coh/js/final.js",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/coh/css/final.min.css",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/kevin-simon/css/bootstrap.min.form.css",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/kevin-simon/images/kevin_simon_logo.svg",
+		"/Users/nathantoddbatemanjr/Documents/Kadosh/kadosh_clients/kevin-simon/css/images/kevin_simon_kc_logo.png",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/P1 - Prep/solution/app.js",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/gulp-starter/coh/index.php",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/gulp-starter/coh/news-archive.php",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/gulp-starter/coh/about.php",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/gulp-starter/coh/donate.php",
+		"/Users/nathantoddbatemanjr/Desktop/about.php",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/css/main.min.css",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/css/main.css",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/css/small.css",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/scss/_variables.scss",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/Udacity/Portfolio/project5/index.html",
+		"/Users/nathantoddbatemanjr/Documents/nbateman/portfolio/scss/small.scss",
+		"/Users/nathantoddbatemanjr/Desktop/coh/gulpfile.js",
+		"/Users/nathantoddbatemanjr/Desktop/coh/js/news.js",
+		"/Users/nathantoddbatemanjr/Desktop/coh/js/main.js",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/old code/dead.js",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/friendlychat/web-start/scripts/main.js",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/firebase.json",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/css/bootstrap.css",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/js/final.min.js",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/js/bootstrap.js",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/js/final.js",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/js/tether.js",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/css/768.css",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/scss/1280.scss",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/scss/320.scss",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/scss/big.scss",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/scss/449.scss",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/scss/480.scss",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/scss/768.scss",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/js/jQuery.js",
+		"/Users/nathantoddbatemanjr/Desktop/Senior_WDND/Project_1/gulpfile.js"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"note",
+			"final",
+			"Blog",
+			"animation",
+			"userIdPost",
+			"Write",
+			"Write new post",
+			"functions",
+			"view",
+			"count",
+			"Create",
+			"meeting",
+			"hide",
+			"events-fire",
+			"status",
+			"log",
+			"log-out",
+			"start",
+			"h4",
+			"day",
+			"date",
+			"60",
+			"date",
+			"navbar",
+			"button",
+			"error.le",
+			"length",
+			"error",
+			"addError",
+			"modal",
+			"child",
+			"writeNew",
+			"added",
+			"child added",
+			"collapse",
+			"265",
+			"#DC7E0F",
+			"keyframes",
+			"#transition",
+			"#337ab7",
+			"glow",
+			"btn-main-coh",
+			"randomBannerCat();",
+			"randomBanner",
+			"center-fly",
+			"document",
+			"767",
+			"font-size",
+			"signIn",
+			"signin",
+			"signUp",
+			"signup",
+			"img",
+			"images",
+			"section",
+			"height: 100%;",
+			"height: 100",
+			"315px",
+			"max-width",
+			"background-color",
+			"bacground-color",
+			"page-scroll",
+			";\n",
+			"error",
+			"error.len",
+			"addError",
+			"error",
+			"submit",
+			"createEvent",
+			"submit-account",
+			"class='disabled'",
+			"<label>",
+			"hide",
+			"label",
+			"object",
+			"event-post",
+			"skills",
+			"Where",
+			"out",
+			"log",
+			"sign",
+			"disabled",
+			"class='disabled'",
+			"false",
+			"@",
+			"index.php",
+			"@",
+			" Chapter	 Parallel	 Compare",
+			"Chapter	 Parallel	 Compare",
+			" Chapter	 Parallel	 Compare",
+			"Chapter	 Parallel	 Compare",
+			"val",
+			"event",
+			"h4",
+			"onclick",
+			"initialize",
+			"signUp",
+			"addError",
+			"hide",
+			".val()",
+			"active",
+			"countFocus",
+			"nameFIeld",
+			"nameField",
+			"active",
+			"error",
+			"submitEvent",
+			"sass",
+			"checkStartDate",
+			"createEvent",
+			"signUp",
+			"august",
+			"console",
+			"#password-confirm",
+			"signUp",
+			"trigger",
+			"getLast",
+			"active",
+			"init",
+			"FriendlyChat()",
+			"saveMessage",
+			"checkSetup",
+			"FriendlyChat",
+			"loadMessages",
+			"initFirebase",
+			"this.signIN",
+			"tether"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 353.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
