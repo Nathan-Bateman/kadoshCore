@@ -1,9 +1,9 @@
 /*!
 Theme Name: hume_scores
-Theme URI: http://underscores.me/
+Theme URI: https://github.com/Nathan-Bateman/kadoshCore
 Author: Nathan Bateman
 Author URI: http://nathan-bateman.github.io
-Description: the learner
+Description: The beginning theme for Kadosh Solutions
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -86,14 +86,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 @import "site/site";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -104,3 +104,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+# Bootstrap Styles
+--------------------------------------------------------------*/
+@import "kadosh_custom/bootstrap";
+
+/*--------------------------------------------------------------
+# Custom Kadosh Styles
+--------------------------------------------------------------*/
+@import "kadosh_custom/main";

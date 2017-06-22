@@ -1,0 +1,71 @@
+/*.mc-main {
+	padding: 0 50px;
+
+	td {
+		height: 120px;
+	}
+	.my-calendar-header {
+		display: flex;
+		justify-content: space-between;
+
+		.my-calendar-date-switcher, .mc-format {
+			display: none;
+		}
+
+		.mc-time {
+			display: flex;
+
+			span, a {
+				margin: 0 15px;
+			}
+			span {
+				color: rgba(51, 122, 183, 0.64);
+				font-weight: 700;
+
+			}
+			a {
+				font-weight: 700;
+				text-decoration: none;
+			}
+		}
+	}
+	caption {
+		margin: 20px 0px;
+	    font-weight: 700;
+	    padding: 2px;
+	    text-align: center;
+	    color: #000;
+	    font-size: 16px;
+	}
+
+	.mc-time {
+
+	}
+	.my-calendar-date-switcher {
+
+	}
+	.my-calendar-table {
+
+	}
+	.my-calendar-nav {
+		ul > li {
+			.fa-chevron-circle-right, .fa-chevron-circle-left {
+				font-size: 30px;
+				color: #000;
+			}
+		}
+		.heading .my-calendar-month {
+		
+		}
+	}
+	.my-calendar-footer {
+		display: none;
+
+	}
+	.mc-export {
+		display: none;
+	}
+	.mc-print {
+		display: none;
+	}
+}*/

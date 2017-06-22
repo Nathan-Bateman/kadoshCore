@@ -1,0 +1,16 @@
+.ytp-watermark {
+	display:none !important;
+	&hover {
+		display:none !important;
+	}
+}
+.site-content {
+
+	padding: 1em;
+
+	@media screen and (min-width: $query__small) {
+		
+		padding: 2em;	
+	
+	}
+}

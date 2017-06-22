@@ -1,4 +1,4 @@
-.main-navigation {
+/*.main-navigation {
 	clear: both;
 	display: block;
 	float: left;
@@ -69,9 +69,116 @@
 	.current-menu-ancestor > a {
 	}
 }
+*/
+/*Kadosh Menu*/
+.main-navigation {
 
+	.menu {
+		display: flex;
+		padding: 0;
+		margin: 0;
+		justify-content: space-around;
+		list-style-type: none;
+		position: relative;
+			 li {
+				padding: 15px 15px 15px 0;
+				width: 100px;
+				margin: 0 0 0 15px;
+				text-align: left;
+				a {
+					margin-left: 10px;
+				}
+				.sub-menu {
+					list-style-type: none;
+					position: absolute;
+					margin: 0;
+				    z-index: 99999;
+				    background-color: $color__background-ins;
+				    display: none;
+				    li {
+				    	padding: 15px 15px 15px 0px;
+				    	margin-left: -30px;
+				    	/*width: calc(100% + 50px);*/
+				    	text-align: left;
+				    	a {
+				    		margin-left: 0;
+				    	}
+				    }
+				    .menu-item-has-children {
+				    	min-width: 175px;
+    					width: 100%;
+				    	ul {
+						    position: absolute;
+						    top: 0;
+						    left: 50%;
+						    background-color: $color__background-ins;
+						    margin-left: -5px;
+						    li {
+								width: calc(100% + 50px);
+								display: block;	
+								background-color: transparent !important;
+								max-width: 100px !important;
+						    };
+						}	    
+						&:hover {
+							background-color: $color__background-ins;
+							ul {
+								display: block;
+								
+							}
+						}
+
+				    }
+				}	
+			}
+			.menu-item-has-children {
+				
+				&:hover {
+					background-color: $color__background-ins;
+					.sub-menu {
+						display:block;
+
+						li {
+							display: block;	
+							background-color: $color__background-ins;
+							width: 185px;
+							height: auto;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							a {
+								text-decoration: none;
+							    overflow: hidden;
+								text-overflow: ellipsis;
+							}
+						}	
+					}
+				}
+			}	
+	}
+}
+@media screen and (max-width: $query__laptop) {
+
+	.site-header {
+		display: flex;
+		justify-content: space-between;
+	}	
+
+	.site-branding {
+		width: 100%;
+		display: block !important;
+    	margin: 0 auto;
+    	text-align: center;
+	}
+
+	.main-navigation {
+		display:none;
+	}
+	#site-navigation-mobile	{
+		display: block;
+	}
+}
 /* Small menu. */
-.menu-toggle,
+/*.menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
@@ -83,7 +190,7 @@
 	.main-navigation ul {
 		display: block;
 	}
-}
+}*/
 
 .comment-navigation,
 .posts-navigation,

@@ -1,0 +1,15 @@
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: font-url('fonts/bootstrap/glyphicons-halflings-regular.eot');
+  src: font-url('fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       font-url('fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'),
+       font-url('fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'),
+       font-url('fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+@import "slicknav";
+@import "fullcalendar";
+
+#calendar {
+	padding: 0 50px;
+}

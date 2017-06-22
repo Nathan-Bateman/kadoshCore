@@ -1043,6 +1043,7 @@ function get_header_image_tag( $attr = array() ) {
 			'width' => $width,
 			'height' => $height,
 			'alt' => get_bloginfo( 'name' ),
+			'class' => 'header-image',
 		)
 	);
 

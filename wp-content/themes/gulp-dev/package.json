@@ -24,5 +24,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
     "jshint": "^2.9.4"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
   }
 }

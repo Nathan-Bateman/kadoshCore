@@ -104,3 +104,16 @@
 		}
 	}( container ) );
 } )();
+
+jQuery(document).ready(function() {
+	(function($) {
+	
+		$(function(){
+			$('#primary-menu').slicknav({
+				prependTo:'#site-navigation-mobile',
+				label: 'Menu'
+			})
+		});   
+	})( jQuery );
+}); 
+
