@@ -182,21 +182,21 @@ function hume_scripts() {
 
 	wp_enqueue_style( 'hume-style', get_stylesheet_uri() );
 	wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(),'06192017');
-	wp_enqueue_style('fullcalendarcss', '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css', array(),'061920172');
-	wp_register_script('moment', get_template_directory_uri() . '/js/moment.js', array(), false);
+	// wp_enqueue_style('fullcalendarcss', '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css', array(),'061920172');
+	// wp_register_script('moment', get_template_directory_uri() . '/js/moment.js', array(), false);
 	
-	wp_enqueue_script('fullcalendar', '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js', array('jquery','moment',), false);
-	wp_enqueue_script('gcalendar', get_template_directory_uri() . '/js/gcal.min.js', array('fullcalendar'), false);
+	// wp_enqueue_script('fullcalendar', '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js', array('jquery','moment',), false);
+	// wp_enqueue_script('gcalendar', get_template_directory_uri() . '/js/gcal.min.js', array('fullcalendar'), false);
 	wp_register_script('slicknav', get_template_directory_uri() . '/js/jquery.slicknav.js', array('jquery', 'wp-custom-header'), true);
 
 	wp_enqueue_script( 'hume-navigation', get_template_directory_uri() . '/js/navigation.js', array('slicknav'), '20151215', true );
 
-	// wp_register_script( 'bootstrap',  get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery','wp-custom-header'), '06082017', true );
+	wp_register_script( 'bootstrap',  get_template_directory_uri() . '/js/bootstrap.min.js', array('slicknav'), '06082017', true );
 	// wp_register_script('moment', get_template_directory_uri() . '/js/moment.js', array(), false);
 	// wp_register_script('fullcalendar', get_template_directory_uri() . '/js/fullcalendar.min.js', array('moment'), false);
 	
 
-	wp_enqueue_script( 'custom-script',  get_template_directory_uri() . '/js/main.js', array('fullcalendar'), '06052017', true );
+	wp_enqueue_script( 'custom-script',  get_template_directory_uri() . '/js/main.js', array('bootstrap'), '06052017', true );
 
 	wp_enqueue_script( 'hume-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
