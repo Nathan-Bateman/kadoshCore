@@ -9150,4 +9150,35 @@ button.close {
 	}
 }
 
+.sermon-entry-content .sermon-content-wrapper {
+	width: 80%;
+	max-width: 400px;
+}
+
+.sermon-entry-content .sermon-content-wrapper .polaroid-sermon-archive {
+	/*width: 80%;
+		  max-width: 400px;*/
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom: 25px;
+}
+
+.sermon-entry-content .sermon-content-wrapper .polaroid-sermon-archive img {
+	width: 100%;
+}
+
+.sermon-entry-content .sermon-content-wrapper .polaroid-sermon-archive .label-wrapper {
+	text-align: center;
+	padding: 10px 20px;
+}
+
+.sermon-entry-content .sermon-content-wrapper .sermon-share-download ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
 /*# sourceMappingURL=../hume/sass/maps/style.css.map */

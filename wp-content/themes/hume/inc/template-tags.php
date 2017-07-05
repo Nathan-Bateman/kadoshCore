@@ -38,6 +38,25 @@ function hume_posted_on() {
 
 }
 endif;
+/*Custom function for sermon dates*/
+function sermon_post_date() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+	$posted_on = sprintf(
+		// esc_html_x( 'Posted on %s', 'post date', 'hume' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+	echo '<span class="posted-on">' . $posted_on . '</span>';
+}
+
 
 if ( ! function_exists( 'hume_entry_footer' ) ) :
 /**

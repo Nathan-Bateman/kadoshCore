@@ -334,7 +334,83 @@ function the_hume_custom_header_markup() {
 		// 	) );	
 	}
 }
-// echo '<pre>';
-// print_r(get_post_custom_keys(1845));
-// print_r(get_post_meta(1845)); 
-// echo '</pre>';
+
+//Custom Taxonomy for Sermon
+function series_taxonomy() {  
+    register_taxonomy(  
+        'series',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces). 
+        'sermon',        //post type name
+        array(  
+            'hierarchical' => true,  
+            'label' => 'Series',  //Display name
+            'query_var' => true,
+            'rewrite' => array(
+                'slug' => 'series', // This controls the base slug that will display before each term
+                'with_front' => false // Don't display the category base before 
+            )
+        )  
+    );  
+}  
+add_action( 'init', 'series_taxonomy');
+//Sermon Post Type
+// Register Custom Post Type sermon
+// Post Type Key: sermon
+function create_sermon_cpt() {
+
+	$labels = array(
+		'name' => __( 'sermons', 'Post Type General Name', 'textdomain' ),
+		'singular_name' => __( 'sermon', 'Post Type Singular Name', 'textdomain' ),
+		'menu_name' => __( 'Sermons', 'textdomain' ),
+		'name_admin_bar' => __( 'sermon', 'textdomain' ),
+		'archives' => __( 'sermon Archives', 'textdomain' ),
+		'attributes' => __( 'sermon Attributes', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent sermon:', 'textdomain' ),
+		'all_items' => __( 'All sermons', 'textdomain' ),
+		'add_new_item' => __( 'Add New sermon', 'textdomain' ),
+		'add_new' => __( 'Add New', 'textdomain' ),
+		'new_item' => __( 'New sermon', 'textdomain' ),
+		'edit_item' => __( 'Edit sermon', 'textdomain' ),
+		'update_item' => __( 'Update sermon', 'textdomain' ),
+		'view_item' => __( 'View sermon', 'textdomain' ),
+		'view_items' => __( 'View sermons', 'textdomain' ),
+		'search_items' => __( 'Search sermon', 'textdomain' ),
+		'not_found' => __( 'Not found', 'textdomain' ),
+		'not_found_in_trash' => __( 'Not found in Trash', 'textdomain' ),
+		'featured_image' => __( 'Featured Image', 'textdomain' ),
+		'set_featured_image' => __( 'Set featured image', 'textdomain' ),
+		'remove_featured_image' => __( 'Remove featured image', 'textdomain' ),
+		'use_featured_image' => __( 'Use as featured image', 'textdomain' ),
+		'insert_into_item' => __( 'Insert into sermon', 'textdomain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this sermon', 'textdomain' ),
+		'items_list' => __( 'sermons list', 'textdomain' ),
+		'items_list_navigation' => __( 'sermons list navigation', 'textdomain' ),
+		'filter_items_list' => __( 'Filter sermons list', 'textdomain' ),
+	);
+	$args = array(
+		'label' => __( 'sermon', 'textdomain' ),
+		'description' => __( 'any message given for the edification of the body of Christ', 'textdomain' ),
+		'labels' => $labels,
+		'menu_icon' => 'dashicons-megaphone',
+		'supports' => array('title', 'editor', 'excerpt', 'revisions', 'author', 'post-formats', 'custom-fields', 'thumbnail' ),
+		'taxonomies' => array('series'),
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'menu_position' => 5,
+		'show_in_admin_bar' => false,
+		'show_in_nav_menus' => true,
+		'can_export' => true,
+		'has_archive' => true,
+		'hierarchical' => false,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
+		'publicly_queryable' => true,
+		'capability_type' => 'post',
+	);
+	register_post_type( 'sermon', $args );
+
+}
+add_action( 'init', 'create_sermon_cpt', 0 );
+
+//Add custom image sizes for featured images
+add_image_size( 'sermon-archive-size', 333, 360 );
