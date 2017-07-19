@@ -92,10 +92,12 @@ jQuery(document).ready(function() {
 			}
 			
 		}); 
-
-
-	 
-
+	//make the social media buttons show on click of share icon - sermons
+		$( ".social-wrap" ).click(function() {
+		  	//$('.sermon-share').next().toggleClass('hide-share-sermon');
+		  	$(this).parent().siblings(".social-share-buttons").children('.sermon-share').toggleClass('hide-share-sermon');
+		  	
+		});
 
 	})( jQuery );
 }); 

@@ -76,6 +76,21 @@ function hume_setup() {
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
     ) );
+
+    	/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
+		'gallery',
+		'audio',
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'hume_setup' );
@@ -352,13 +367,31 @@ function series_taxonomy() {
     );  
 }  
 add_action( 'init', 'series_taxonomy');
+function speaker_taxonomy() {  
+    register_taxonomy(  
+        'speaker',   
+        'sermon',        
+        array(  
+            'hierarchical' => true,  
+            'label' => 'Speaker',
+            'show_ui' => true,  
+            'query_var' => true,
+            'rewrite' => array(
+                'slug' => 'speaker', 
+                'with_front' => false 
+            )
+        )  
+    );  
+}  
+add_action( 'init', 'speaker_taxonomy');
+
 //Sermon Post Type
 // Register Custom Post Type sermon
 // Post Type Key: sermon
 function create_sermon_cpt() {
 
 	$labels = array(
-		'name' => __( 'sermons', 'Post Type General Name', 'textdomain' ),
+		'name' => __( 'Sermons', 'Post Type General Name', 'textdomain' ),
 		'singular_name' => __( 'sermon', 'Post Type Singular Name', 'textdomain' ),
 		'menu_name' => __( 'Sermons', 'textdomain' ),
 		'name_admin_bar' => __( 'sermon', 'textdomain' ),
@@ -392,7 +425,7 @@ function create_sermon_cpt() {
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-megaphone',
 		'supports' => array('title', 'editor', 'excerpt', 'revisions', 'author', 'post-formats', 'custom-fields', 'thumbnail' ),
-		'taxonomies' => array('series'),
+		'taxonomies' => array('series','speaker'),
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
@@ -412,5 +445,29 @@ function create_sermon_cpt() {
 }
 add_action( 'init', 'create_sermon_cpt', 0 );
 
+//Limit number of sermons per archive page here
+function sermon_archive_post_limit( $query ) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+
+    if ( is_post_type_archive( 'sermon' ) ) {
+        $query->set( 'posts_per_page', 6 );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'sermon_archive_post_limit', 1 );
+
 //Add custom image sizes for featured images
 add_image_size( 'sermon-archive-size', 333, 360 );
+
+//remove default taxonomy menu selection for sermons
+function remove_speaker_meta() {
+	remove_meta_box( 'speakerdiv', 'sermon', 'side' );
+        
+        // $custom_taxonomy_slug is the slug of your taxonomy, e.g. 'genre' )
+        // $custom_post_type is the "slug" of your post type, e.g. 'movies' )
+}
+add_action( 'admin_menu', 'remove_speaker_meta' );
+
+//include custom fields in search return
+

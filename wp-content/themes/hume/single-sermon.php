@@ -1,29 +1,22 @@
 <?php
 /**
- * Template Name: Sermon Page
+ * The template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package hume_scores
  */
 
-get_header();
+get_header(); ?>
 
-?>
-
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area container-fluid">
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		$args = array(
-		    'post_type'=> 'sermons',
-		    );              
+		while ( have_posts() ) : the_post();
 
-		$the_query = new WP_Query( $args ); 
-		echo '<pre>';
-		print_r($the_query);
-		echo '</pre>';
-		if($the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
-		echo "<pre>";
-		print_r(the_post());
-		echo "</pre>";
-			//get_template_part( 'template-parts/content-sermon', get_post_format() );
+			// get_template_part( 'template-parts/content-sermon', get_post_format() );
+		get_template_part( 'template-parts/content-sermon');
 
 			the_post_navigation();
 
@@ -39,7 +32,5 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-
-get_sidebar();
+// get_sidebar();
 get_footer();
-endif;
