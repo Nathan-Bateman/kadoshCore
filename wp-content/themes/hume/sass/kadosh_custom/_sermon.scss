@@ -5,6 +5,7 @@
     text-align: center;
     justify-content: center;
     background-color: rgba(159, 171, 190, 0.38);
+    margin-bottom: 20px;
 }
 .article-parent {
 	display: flex;
@@ -13,6 +14,32 @@
 	article {
 		max-width: 330px;
 		flex: 0 1 auto;
+	}
+}
+.single-sermon {
+	article {
+		max-width: 900px;
+		margin: 0 auto;
+		.inline-social {
+			display: flex;
+		.social-share-buttons {
+				ul {
+					display: flex;
+					margin: 9px 0 0 ;
+					padding: 0;
+					list-style-type: none;
+    				padding: 10px 0;
+					a {
+						color: black;
+						margin: 0 10px;
+						&:hover {
+							color: gray;
+						}	
+					}
+				}
+			}
+		}
+
 	}
 }
 .sermon-entry-content {
@@ -97,7 +124,6 @@
 					margin: 9px 0 0 ;
 					padding: 0;
 					list-style-type: none;
-					border-top: 1px solid;
     				padding: 10px 0;
     				justify-content: center;
 					a {

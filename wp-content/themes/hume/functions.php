@@ -471,3 +471,32 @@ add_action( 'admin_menu', 'remove_speaker_meta' );
 
 //include custom fields in search return
 
+//functions for including generic sections
+
+function get_donation_cta() {
+	$page_content = get_post(1974)->post_content;
+	$prompt = get_theme_mod('donation_promt');
+	$button_label = get_theme_mod('donation_button_label');
+	$button_link = get_theme_mod('donation_button_link');
+
+	if (!get_theme_mod('turn-on-or-off') ) {
+		return;
+	} else {
+		echo '<div class="row bg-img-quote">
+                <div class="overlay-phs"></div>
+                <div class="max-width">
+                    <div id="quote" class="col-md-12">
+                        <div class="quote-granular">
+                          <!--<img height="70px" width="70px" src="images/quotes.png">-->
+                            <p>'.$prompt.'</p>
+                            <p>
+                             <a href="'.$button_link.'"><button type="button">'.$button_label.'</button></a>
+                             </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>';
+	}
+}
+

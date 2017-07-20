@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area container-fluid">
 		<main id="main" class="site-main" role="main">
 
 			<?php
@@ -31,6 +31,11 @@ get_header(); ?>
 			?>
 
 		</main><!-- #main -->
+
+		<?php 
+			get_donation_cta();
+		?>
+
 	</div><!-- #primary -->
 
 <?php

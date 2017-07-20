@@ -39,7 +39,7 @@ get_header(); ?>
 							// $the_query = new WP_Query( $args ); 
 							//if ( have_posts() ) : ?> -->
 
-								<header class="page-header">
+								<!-- <header class="page-header"> -->
 									<!-- <?php
 										//the_archive_title( '<h1 class="page-title">', '</h1>' );
 										// echo '<h1 class="page-title">';
@@ -47,7 +47,7 @@ get_header(); ?>
 										// echo '</h1>';
 										//the_archive_description( '<div class="archive-description">', '</div>' );
 									?> -->
-								</header><!-- .page-header -->
+								<!--</header> .page-header -->
 							<div class='row'>
 								<div class='col-md-8 article-parent'>
 									<?php
@@ -72,7 +72,7 @@ get_header(); ?>
 
 									endif; ?>
 								</div>
-								<?php the_posts_navigation(); ?>
+								
 								<div class='col-md-4'>
 									<?php
 										get_sidebar();
@@ -84,6 +84,7 @@ get_header(); ?>
 		</div><!-- #primary -->
 	
 <?php
+the_posts_navigation();
 get_footer();
 ?>
 </div>

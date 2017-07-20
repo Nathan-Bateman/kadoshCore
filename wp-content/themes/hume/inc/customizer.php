@@ -97,6 +97,62 @@ function hume_customize_register( $wp_customize ) {
 		 'active_callback' => 'is_front_page',
 		));
 
+	//Add custom donation call to action
+		$wp_customize->add_section( 'call_to_action_donation', array(
+		  'title' => __( 'Donation Prompt', 'hume' ),
+		  'priority' => 85,
+		) );
+
+		$wp_customize->add_setting( 'donation_promt', array(
+		  'default' => "Get involved in the work of service unto God's Glory",
+		  'transport' => 'postMessage', // or postMessage
+		  'type' => 'theme_mod', // or 'option'
+		  'sanitize_callback' => 'sanitize_text_field',
+		));
+
+		$wp_customize->add_control('donation_promt', array(
+		 'label'   => 'Donation Text',
+		  'section' => 'call_to_action_donation',
+		 'type'    => 'textarea',
+		 //'active_callback' => 'is_front_page',
+		));
+		$wp_customize->add_setting( 'donation_button_label', array(
+		  'default' => "Button Label - three words or less",
+		  'transport' => 'postMessage', // or postMessage
+		  'type' => 'theme_mod', // or 'option'
+		  'sanitize_callback' => 'sanitize_text_field',
+		));
+		$wp_customize->add_control('donation_button_label', array(
+		 'label'   => 'Button Label',
+		 'section' => 'call_to_action_donation',
+		 'type'    => 'text',
+		 //'active_callback' => 'is_front_page',
+		));
+		$wp_customize->add_setting( 'donation_button_link', array(
+		  'default' => 'Link to donation or "get involved" page',
+		  'transport' => 'postMessage', // or postMessage
+		  'type' => 'theme_mod', // or 'option'
+		  'sanitize_callback' => 'sanitize_text_field',
+		));
+		$wp_customize->add_control('donation_button_link', array(
+		 'label'   => 'Button Link',
+		 'section' => 'call_to_action_donation',
+		 'type'    => 'text',
+		 //'active_callback' => 'is_front_page',
+		));
+		$wp_customize->add_setting( 'turn-on-or-off', array(
+		  'default' => 'Link to donation or "get involved" page',
+		  'transport' => 'postMessage', // or postMessage
+		  'type' => 'theme_mod', // or 'option'
+		  'sanitize_callback' => 'sanitize_text_field',
+		));
+		$wp_customize->add_control('turn-on-or-off', array(
+		 'label'   => 'Turn this UI on for all pages (excludes posts, videos, etc.)',
+		 'section' => 'call_to_action_donation',
+		 'type'    => 'checkbox',
+		 //'active_callback' => 'is_front_page',
+		));
+
 }
 add_action( 'customize_register', 'hume_customize_register' );
 /**
