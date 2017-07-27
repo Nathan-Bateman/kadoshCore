@@ -45,7 +45,8 @@ function hume_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Main', 'hume' ),
-		'menu-2' => esc_html__( 'Social', 'hume')
+		'menu-2' => esc_html__( 'Social', 'hume'),
+		'menu-3' => esc_html__('Contact','hume')
 	) );
 
 	/*
@@ -76,6 +77,23 @@ function hume_setup() {
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
     ) );
+
+    function theme_prefix_setup() {
+	
+		add_theme_support( 'custom-logo', array(
+			'height'      => 100,
+			'width'       => 400,
+			'flex-width' => true,
+		) );
+	}
+	add_action( 'after_setup_theme', 'theme_prefix_setup' );
+
+	function theme_prefix_the_custom_logo() {
+		if ( function_exists( 'the_custom_logo' ) ) {
+			the_custom_logo();
+		}
+	}
+
 
     	/*
 	 * Enable support for Post Formats.
@@ -474,12 +492,12 @@ add_action( 'admin_menu', 'remove_speaker_meta' );
 //functions for including generic sections
 
 function get_donation_cta() {
-	$page_content = get_post(1974)->post_content;
+	//$page_content = get_post(1974)->post_content;
 	$prompt = get_theme_mod('donation_promt');
 	$button_label = get_theme_mod('donation_button_label');
 	$button_link = get_theme_mod('donation_button_link');
 
-	if (!get_theme_mod('turn-on-or-off') ) {
+	if (!get_theme_mod('turn-on-or-off-donate') ) {
 		return;
 	} else {
 		echo '<div class="row bg-img-quote">
@@ -499,4 +517,115 @@ function get_donation_cta() {
             </div>';
 	}
 }
+function get_three_main_section() {
+	$first_main = get_theme_mod('three_main_one');
+	$first_main_link = get_theme_mod('three_main_one_link');
+	$second_main = get_theme_mod('three_main_two');
+	$second_main_link = get_theme_mod('three_main_two_link');
+	$third_main = get_theme_mod('three_main_three');
+	$third_main_link = get_theme_mod('three_main_three_link');
+	if (!get_theme_mod('turn-on-or-off-three-main') ) {
+		return;
+	} else {
+		echo '<div class="row three-main">
+	                <div class="overlay-three"></div>
+	                	<div class="wrapper-three-main">
+	                		<h2>A Closer Look</h2>
+	                		<h4>See more of who we are, where we serve, and what we believe.</h4>
+		                    <div class="col-md-4">
+		                        <div class="drop-circle-shadow">
+		                          <img src="/wp-content/themes/hume/images/earth.svg"> 
+		                        </div>
+		                        <h3><a href="'.$first_main_link.'">'.$first_main.'</a></h3>
+		                    </div>
+							<div class="col-md-4">
+		                        <div class="drop-circle-shadow">
+		                          <img src="/wp-content/themes/hume/images/bible.svg"> 
+		                        </div>
+		                        <h3><a href="'.$second_main_link.'">'.$second_main.'</a></h3>
+		                    </div>
+		                    <div class="col-md-4">
+		                        <div class="drop-circle-shadow">
+		                          <img src="/wp-content/themes/hume/images/ministry.svg"> 
+		                        </div>
+		                        <h3><a href="'.$third_main_link.'">'.$third_main.'</a></h3>
+		                    </div>
+	                    </div>
+	            </div>';
+	    }
 
+}
+//Section for all pages above footer
+function get_contact_prayer_section() {
+	$entity_name = get_theme_mod('entity_name');
+	$addres_one = get_theme_mod('addres_one');
+	$addres_two = get_theme_mod('addres_two');
+	$phone = get_theme_mod('phone');
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+	$logo = $image[0];
+	if (!get_theme_mod('turn-on-or-off-three-main') ) {
+		return;
+	} else {
+		echo '<div class="row contact-prayer-info">
+	                <div class="overlay-three"></div>
+	                	<div class="wrapper-contact-prayer-info">
+		                    <div class="col-md-6 address">
+		                    <h1>'.$entity_name.'</h1> 
+		                    <p>'.$addres_one.'</p>
+		                    <p>'.$addres_two.'</p>
+		                    <a id="menu-num" href="tel:2296380708"><h2>'.$phone.'</h2></a><nav class="contact">';
+		      		wp_nav_menu( array( 'theme_location' => 'menu-3', 'menu_id' => 'contact-menu' ) ); 
+		echo '<nav class="footer-social">';
+					wp_nav_menu( array( 'theme_location' => 'menu-2', 'menu_id' => 'social-menu' ) );
+		echo '</nav>';           
+		echo '</nav></div>
+				<div class="col-md-6 contact-prayer">
+					<h1>Contact / Prayer Request</h1>'.do_shortcode('[ninja_form id=1]').'  
+		                       
+		        </div>  
+	            </div>
+	          </div>';
+	    }
+	    
+}
+
+//Get 4 most recent sermons for sidebar
+	function get_recent_sermons() {
+		$args = array(
+			'post_type' => array('sermon'
+        		),
+			'posts_per_page' => '4',
+		);
+
+		$query = new WP_Query( $args );
+		if( $query->have_posts() ):
+			echo '<h4>Sermons</h4>';
+			echo '<ul>';
+			while ( $query->have_posts() ) : $query->the_post();
+				echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+			endwhile;
+			echo '</ul>';
+		endif;
+		wp_reset_postdata();
+	}
+	//Get 4 most recent sermons for sidebar
+	function get_recent_series() {
+		
+		$terms = get_terms( array(
+		    'taxonomy' => 'series',
+		    'hide_empty' => false,
+		) );
+		//TODO: limit it to the most recent 4 series
+		echo '<h4>Series</h4>';
+		echo '<ul>';
+		echo '<pre>';
+		print_r($terms);
+		echo '</pre>';
+		foreach ( $terms as $term ) {
+			echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+		}
+		echo '</ul>';
+	}
+
+require get_template_directory () . '/inc/icon-functions.php';

@@ -14,14 +14,17 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<nav class='footer-social'>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-2', 'menu_id' => 'social-menu' ) ); ?>
-		</nav>
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'hume' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'hume' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'hume' ), 'hume', '<a href="https://automattic.com/" rel="designer">Nathan Bateman</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class='row'>
+			<div class='col-md-12 wrapper-footer'>
+				<div class="copyright">
+				<i class="fa fa-copyright" aria-hidden="true"></i><span><?php echo get_theme_mod('entity_name'); ?></span>
+				</div>
+				<div class="site-info">
+					<a href="<?php echo esc_url( __( 'http://nathan-bateman.github.io/', 'hume' ) ); ?>"><?php printf( esc_html__( 'Assembled by %s', 'hume' ), 'Kadosh Web Solutions' ); ?></a>
+				</div>
+			</div>
+			
+	</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

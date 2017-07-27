@@ -80,11 +80,12 @@ get_header(); ?>
 								</div>
 							</div>
 							</main><!-- #main -->		
-			
+			<?php get_contact_prayer_section(); ?>
 		</div><!-- #primary -->
 	
 <?php
 the_posts_navigation();
+
 get_footer();
 ?>
 </div>

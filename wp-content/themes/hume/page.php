@@ -34,10 +34,13 @@ get_header(); ?>
 
 		<?php 
 			get_donation_cta();
+			get_three_main_section();
+			get_contact_prayer_section();
+			// echo humescores_get_svg( array('icon' => 'ministry') );
 		?>
 
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

@@ -39,8 +39,10 @@ get_header(); ?>
 		?>
 
 		</main><!-- #main -->
+		<?php get_contact_prayer_section(); ?>
 	</div><!-- #primary -->
 
 <?php
 // get_sidebar();
+//get_contact_prayer_section();
 get_footer();

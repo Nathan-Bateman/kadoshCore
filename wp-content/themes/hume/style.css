@@ -1039,13 +1039,19 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## footer Layouts
 --------------------------------------------------------------*/
-.footer-social .social-menu a {
-	color: transparent !important;
+#colophon .wrapper-footer {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(50%);
+	        transform: translateY(50%);
 }
 
-.footer-social .social-menu a .fa-stack {
-	/*color: #3b5998;*/
-	color: green !important;
+#colophon .wrapper-footer .copyright, #colophon .wrapper-footer .site-info {
+	text-align: center;
+}
+
+#colophon .wrapper-footer .copyright span, #colophon .wrapper-footer .site-info span {
+	padding-left: 3px;
 }
 
 /*--------------------------------------------------------------
@@ -1207,6 +1213,49 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative;
+	/* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}
+
+/*--------------------------------------------------------------
+SVG Fallbacks
+--------------------------------------------------------------*/
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+/* Social Menu fallbacks */
+.no-svg .social-menu a {
+	height: auto;
+	width: auto;
+}
+
+.no-svg .social-menu li a .screen-reader-text {
+	clip: auto;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
+	height: auto;
+	position: relative !important;
+	/* overrides previous !important styles */
+	width: auto;
 }
 
 /*--------------------------------------------------------------
@@ -9373,6 +9422,189 @@ button.close {
     padding: 28px; 
     font-size: 24px;
     font-style:italic;*/
+}
+
+.three-main {
+	min-height: 600px;
+	position: relative;
+	border-bottom: 6px #002254 solid;
+	border-top: 6px #002254 solid;
+}
+
+.three-main .wrapper-three-main {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+	width: 100%;
+}
+
+.three-main .wrapper-three-main h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.three-main .wrapper-three-main h4 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.three-main .drop-circle-shadow {
+	height: 25rem;
+	width: 25rem;
+	/* border-radius: 50%;
+        box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);*/
+	text-align: center;
+	margin: 0 auto;
+}
+
+.three-main .drop-circle-shadow img {
+	width: 150px;
+	height: 150px;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+
+.three-main h3 {
+	text-align: center;
+	margin: 0;
+}
+
+@media screen and (max-width: 991px) {
+	.three-main .drop-circle-shadow {
+		margin: 0 auto 0 auto;
+	}
+	.three-main .wrapper-three-main {
+		position: relative;
+		top: 0;
+		-webkit-transform: translateY(0%);
+		        transform: translateY(0%);
+		margin: 70px 0 70px 0;
+	}
+	.three-main h3 {
+		margin: 0 0 20px 0;
+	}
+}
+
+.contact-prayer-info {
+	background-color: gray;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info {
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address h1 {
+	color: #fff;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address p {
+	font-size: 28px;
+	color: #fff;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address a {
+	color: #fff;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address a:hover {
+	/*color: rgba(128, 128, 128, 0.1);*/
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address #contact-menu {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 30px 0 0 0;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address #contact-menu li {
+	margin-left: 15px;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address #contact-menu li:first-child {
+	margin-left: 0;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address #social-menu {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 30px 0 0 0;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address #social-menu li {
+	margin-left: 15px;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address #social-menu li:first-child {
+	margin-left: 0;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .address #social-menu span {
+	color: black;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .contact-prayer h1 {
+	color: #fff;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .contact-prayer .nf-form-fields-required {
+	display: none;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .contact-prayer input {
+	display: block;
+	width: 100%;
+	height: 44px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: rgba(85, 85, 85, 0.56);
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 20px;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .contact-prayer input::-webkit-input-placeholder {
+	color: rgba(85, 85, 85, 0.56);
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .contact-prayer input:-ms-input-placeholder {
+	color: rgba(85, 85, 85, 0.56);
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .contact-prayer input::placeholder {
+	color: rgba(85, 85, 85, 0.56);
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .contact-prayer .submit-button {
+	width: 25%;
+	color: #fff;
+	background-color: #DC7E0F;
+}
+
+.contact-prayer-info .wrapper-contact-prayer-info .contact-prayer textarea {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: rgba(85, 85, 85, 0.56);
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 20px;
 }
 
 /*# sourceMappingURL=../hume/sass/maps/style.css.map */
