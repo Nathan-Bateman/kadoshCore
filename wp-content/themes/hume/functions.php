@@ -100,15 +100,15 @@ function hume_setup() {
 	 *
 	 * See: https://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-		'gallery',
-		'audio',
-	) );
+	// add_theme_support( 'post-formats', array(
+	// 	'aside',
+	// 	'image',
+	// 	'video',
+	// 	'quote',
+	// 	'link',
+	// 	'gallery',
+	// 	'audio',
+	// ) );
 }
 endif;
 add_action( 'after_setup_theme', 'hume_setup' );
@@ -385,6 +385,24 @@ function series_taxonomy() {
     );  
 }  
 add_action( 'init', 'series_taxonomy');
+
+function topic_taxonomy() {  
+    register_taxonomy(  
+        'topic',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces). 
+        'sermon',        //post type name
+        array(  
+            'hierarchical' => false,  
+            'label' => 'Topic',  //Display name
+            'query_var' => true,
+            'rewrite' => array(
+                'slug' => 'topic', // This controls the base slug that will display before each term
+                'with_front' => false // Don't display the category base before 
+            )
+        )  
+    );  
+}  
+add_action( 'init', 'topic_taxonomy');
+
 function speaker_taxonomy() {  
     register_taxonomy(  
         'speaker',   
@@ -443,7 +461,7 @@ function create_sermon_cpt() {
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-megaphone',
 		'supports' => array('title', 'editor', 'excerpt', 'revisions', 'author', 'post-formats', 'custom-fields', 'thumbnail' ),
-		'taxonomies' => array('series','speaker'),
+		'taxonomies' => array('series','speaker','topic'),
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
@@ -586,8 +604,7 @@ function get_contact_prayer_section() {
 		        </div>  
 	            </div>
 	          </div>';
-	    }
-	    
+	    }    
 }
 
 //Get 4 most recent sermons for sidebar
@@ -609,23 +626,107 @@ function get_contact_prayer_section() {
 		endif;
 		wp_reset_postdata();
 	}
-	//Get 4 most recent sermons for sidebar
+//Get 4 most recent series for sidebar
 	function get_recent_series() {
 		
 		$terms = get_terms( array(
 		    'taxonomy' => 'series',
-		    'hide_empty' => false,
+		    'orderby'    => 'ID',
+		    'order'      => 'DESC',
+		    'hide_empty' => true,
+		    'posts_per_page' => '1'
 		) );
-		//TODO: limit it to the most recent 4 series
 		echo '<h4>Series</h4>';
 		echo '<ul>';
-		echo '<pre>';
-		print_r($terms);
-		echo '</pre>';
+		
+		$terms = array_filter($terms, function($term) {
+					if($term->count !==0) {
+						return true;
+					} else {
+						return false;
+					}
+		});
+		$count_begin = count($terms);
+		$count = 0;
+
 		foreach ( $terms as $term ) {
-			echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
-		}
-		echo '</ul>';
+			
+			if ($count_begin >= 4) {
+				if ($count < 4) {
+					echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+					$count++;
+				} else {
+					echo '</ul>';
+					return;
+				}
+			} if ($count_begin < 4 && $count_begin !== 0) {
+				echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+				$count_begin--;
+			} 
+			if ($count_begin === 0) {
+				echo '</ul>';
+				return;
+			}
+		}	
 	}
+	//Get all series
+	function get_sermon_series () {
+			$terms = get_terms( array(
+				    'taxonomy' => 'series',
+				    'orderby'    => 'name',
+				    'order'      => 'ASC',
+				    'hide_empty' => true,
+				    'posts_per_page' => '1'
+				) );
+			$count = 0;
+			foreach ($terms as $term ) {
+				if ($count < 4) {
+					echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+				} else {
+					echo '</ul>';
+						return;
+					}
+					$count++;
+				}
+	}
+	//Get all topics
+	function get_sermon_topics () {
+			$terms = get_terms( array(
+				    'taxonomy' => 'topic',
+				    'orderby'    => 'name',
+				    'order'      => 'ASC',
+				    'hide_empty' => true,
+				    'posts_per_page' => '1'
+				) );
+			foreach ($terms as $term ) {
+				if (4 === 4) {
+					echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+				} else {
+					echo '</ul>';
+						return;
+					}
+					//$count++;
+				}
+	}
+	//Get all speakers
+	function get_sermon_speakers () {
+			$terms = get_terms( array(
+				    'taxonomy' => 'speaker',
+				    'orderby'    => 'name',
+				    'order'      => 'ASC',
+				    'hide_empty' => true,
+				    'posts_per_page' => '1'
+				) );
+			foreach ($terms as $term ) {
+				if (4 === 4) {
+					echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+				} else {
+					echo '</ul>';
+						return;
+					}
+					//$count++;
+				}
+	}
+
 
 require get_template_directory () . '/inc/icon-functions.php';

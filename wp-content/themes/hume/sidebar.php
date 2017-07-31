@@ -20,47 +20,61 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		get_recent_sermons();
 		get_recent_series();
 	?>
+    <h4>Browse by:</h4>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
 
-	<form action="index.html">
-            <div class='form-group'>
-            	<h4>Filter by:</h4>
-              <!-- <label class='col-form-label visuallyhidden'>Event Type </label> -->
-                  <input id="sermon-topic" class='form-control' list='sermontopics' placeholder="Topic" required>
-                    <datalist id="sermontopics">
-                      <option value="Lunch">
-                      <option value="Dinner">
-                      <option value="Breakfast">
-                      <option value="Prayer">
-                      <option value="Dove Shoot">
-                      <option value="Spouse Date">
-                    </datalist>
-                   <input id="sermon-series" class='form-control' list='sermonseries' placeholder="Series" required>
-                    <datalist id="sermonseries">
-                      <option value="Lunch">
-                      <option value="Dinner">
-                      <option value="Breakfast">
-                      <option value="Prayer">
-                      <option value="Dove Shoot">
-                      <option value="Spouse Date">
-                    </datalist>
-                   <input id="sermon-speaker" class='form-control' list='sermonspeaker' placeholder="Speaker" required>
-                    <datalist id="sermonspeaker">
-                      <option value="Lunch">
-                      <option value="Dinner">
-                      <option value="Breakfast">
-                      <option value="Prayer">
-                      <option value="Dove Shoot">
-                      <option value="Spouse Date">
-                    </datalist>
-                    <input id="sermon-year" class='form-control' list='sermonyear' placeholder="year" required>
-                    <datalist id="sermonyear">
-                      <option value="Lunch">
-                      <option value="Dinner">
-                      <option value="Breakfast">
-                      <option value="Prayer">
-                      <option value="Dove Shoot">
-                      <option value="Spouse Date">
-                    </datalist>
-
-    </form>
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Topic
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+       <?php 
+	       get_sermon_topics();
+	 //        echo '<pre>';
+		// print_r(get_sermon_topics());
+		//  echo '</pre>';
+          ?>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Series
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+           <?php 
+          	get_sermon_series ();
+          ?>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Speaker
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+      	<?php
+        	get_sermon_speakers();
+        ?>
+      </div>
+    </div>
+  </div>
+</div>
+<h4><a href=<?php echo(get_site_url().'/sermon') ?>>All Sermons</a></h4>
 </aside><!-- #secondary -->
+
