@@ -1,11 +1,11 @@
 #quote {
-    min-height: 250px;
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 .bg-img-quote {
-    background-image: url("https://www.sajan.com/wp-content/uploads/2014/09/background-community.jpg");
+    background-image: url("http://localhost:8888/wp-content/uploads/2017/08/community.jpg");
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
@@ -15,25 +15,42 @@
         text-align: center;
         max-width: 310px;
         font-size: 18px;
-    }
-   
+        font-weight: 300;
+        color: #fff;
+        line-height: 1.5;
+    }  
 }
 .overlay-phs {
     position: absolute;
     width: 100%;
     height: 100%;
     display: block;
-    background: rgba(236, 232, 232, 0.6);
+    background: rgba(51, 48, 48, 0.6);
 }
 .quote-granular {
     /*display: flex;
     max-width: 500px;*/
     margin: 0 auto;
+
+    a {
+        border: 1px solid white;
+        padding: 20px 40px;
+        margin-top: 15px;
+        color: #fff;
+        transition: background-color .2s;
+        &:hover {
+                    color: $primary;
+                    background-color: #fff;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+    }
 }
 
-.quote-granular > p {
+.quote-granular > p:last-child {
     /*text-align: left;
     padding: 28px; 
     font-size: 24px;
     font-style:italic;*/
+    margin-top: 45px;
 }

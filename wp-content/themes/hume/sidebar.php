@@ -12,15 +12,15 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
+<aside id="secondary" class="widget-area sermon-side" role="complementary">
 	<?php 
 	// dynamic_sidebar( 'sidebar-1' ); 
 
-		echo '<h2 id=recent-sidebar-one>Recent</h2>';
+		echo '<h3 id=recent-sidebar-one>Recent</h3>';
 		get_recent_sermons();
-		get_recent_series();
+		// get_recent_series();
 	?>
-    <h4>Browse by:</h4>
+    <h4 class='sidebar-browse'>Browse by:</h4>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
 

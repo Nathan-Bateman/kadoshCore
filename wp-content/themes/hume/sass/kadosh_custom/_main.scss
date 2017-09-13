@@ -14,3 +14,73 @@
 @import "threemain";
 @import "contact";
 
+#main {
+	max-width: 992px;
+	margin: 0 auto;
+}
+.container-fluid {
+	overflow-x: hidden;
+	overflow-y: hidden !important;
+  	padding-left:0;
+  	padding-right:0;
+}
+/*Sidebar one*/
+.sermon-side {
+	#recent-sidebar-one {
+		text-transform: uppercase;
+	    letter-spacing: 3px;
+	}
+	.recent-sermon-list {
+		list-style-type: none;
+		margin: 0 0 30px 0;
+		padding: 0;
+		 li {
+		 	text-transform: uppercase;
+		 	letter-spacing: 1.5px;
+		 	padding: 15px 0 15px 0;
+		 	a {
+		 		color: #002254;
+		 		&:hover {
+		 			color: rgba(159, 171, 190, 0.68);
+		 			text-decoration: none;
+		 		}
+		 	}
+		 }
+		 li:first-child {
+		 	border-top: 1px #002254 solid;
+		 	border-bottom: 1px #002254 solid;
+		 }
+		 li:nth-child(3) {
+		 	border-top: 1px #002254 solid;
+		 	border-bottom: 1px #002254 solid;
+		 }
+		 li:last-child {
+		 	border-bottom: 1px #002254 solid;
+		 }
+
+	}
+
+	.sidebar-browse {
+		text-transform: uppercase;
+	    letter-spacing: 2px;
+	}
+
+	.panel-group {
+		.panel-heading {
+			color: $primary;
+			background-color: #dadfe6;
+			text-transform: uppercase;
+			letter-spacing: 1px;	
+		}
+		.panel-body {
+			li {
+				list-style-type: none;
+				margin-bottom: 8px;
+			}
+		}
+		
+	}
+}
+
+
+

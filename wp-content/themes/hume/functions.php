@@ -487,7 +487,7 @@ function sermon_archive_post_limit( $query ) {
         return;
 
     if ( is_post_type_archive( 'sermon' ) ) {
-        $query->set( 'posts_per_page', 6 );
+        $query->set( 'posts_per_page', 4 );
         return;
     }
 }
@@ -526,7 +526,7 @@ function get_donation_cta() {
                           <!--<img height="70px" width="70px" src="images/quotes.png">-->
                             <p>'.$prompt.'</p>
                             <p>
-                             <a href="'.$button_link.'"><button type="button">'.$button_label.'</button></a>
+                             <a href="'.$button_link.'">'.$button_label.'</a>
                              </p>
                         </div>
 
@@ -616,9 +616,12 @@ function get_contact_prayer_section() {
 		);
 
 		$query = new WP_Query( $args );
+		// echo '<pre>';
+		// //print_r($query);
+		// echo '</pre>';
 		if( $query->have_posts() ):
-			echo '<h4>Sermons</h4>';
-			echo '<ul>';
+			//echo '<h4>Sermons</h4>';
+			echo '<ul class="recent-sermon-list">';
 			while ( $query->have_posts() ) : $query->the_post();
 				echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
 			endwhile;
@@ -636,6 +639,7 @@ function get_contact_prayer_section() {
 		    'hide_empty' => true,
 		    'posts_per_page' => '1'
 		) );
+		//print_r($terms);
 		echo '<h4>Series</h4>';
 		echo '<ul>';
 		

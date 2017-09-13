@@ -89,28 +89,28 @@
 								<div class='col-md-8'>
 									<h2><?php echo get_the_title();  ?></h2>
 									<div class='inline-social'>
-										<div class="social-wrap">
+										<!--<div class="social-wrap">
 											<i class="fa fa-share fa-2x reveal-share-sermon" aria-hidden="true"></i>
-										</div>
+										</div>-->
 										<div class='social-share-buttons'>
-								  		<ul class='sermon-share hide-share-sermon'>
-									  		<a href="<?php echo $facebook_share;  ?>">
-									  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span></li>
-									  		</a>
-									  		<a href="<?php echo $linkedin_share;  ?>">
-									  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i>   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> </span></li>
-									  		</a>
-									  		<a href="<?php echo $twitter_share;  ?>">
-									  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i>   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span></li>
-									  		</a>
-									  		<a href="<?php echo $google_plus_share;  ?>">
-									  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i>   <i class="fa fa-google fa-stack-1x fa-inverse"></i> </span></li>
-									  		</a>
-									  		<a href="<?php echo $email_share;  ?>">
-									  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i>   <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i> </span></li>
-									  		</a>
-									  	</ul>
-									  </div>
+									  		<ul class='sermon-share hide-share-sermon'>
+										  		<a href="<?php echo $facebook_share;  ?>">
+										  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span></li>
+										  		</a>
+										  		<a href="<?php echo $linkedin_share;  ?>">
+										  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i>   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> </span></li>
+										  		</a>
+										  		<a href="<?php echo $twitter_share;  ?>">
+										  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i>   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span></li>
+										  		</a>
+										  		<a href="<?php echo $google_plus_share;  ?>">
+										  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i>   <i class="fa fa-google fa-stack-1x fa-inverse"></i> </span></li>
+										  		</a>
+										  		<a href="<?php echo $email_share;  ?>">
+										  			<li><span class="fa-stack fa-lg">   <i class="fa fa-circle fa-stack-2x"></i>   <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i> </span></li>
+										  		</a>
+										  	</ul>
+									  	</div>
 									  </div>
 									<hr>
 									<p><span>Description: </span><?php echo $description; ?></p>

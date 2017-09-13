@@ -28,7 +28,7 @@ get_header(); ?>
 		</header>
 
 	<div class='container-fluid'>
-			<div id="primary" class="content-area">
+			<div id="primary" class="content-area archive-sermon">
 				
 							<main id="main" class="site-main" role="main">
 							<!-- <?php
@@ -79,13 +79,14 @@ get_header(); ?>
 									?>
 								</div>
 							</div>
+							<?php the_posts_pagination(); ?>
 							</main><!-- #main -->		
-			<?php get_contact_prayer_section(); ?>
+			
 		</div><!-- #primary -->
 	
 <?php
-the_posts_navigation();
 
+get_contact_prayer_section();
 get_footer();
 ?>
 </div>
